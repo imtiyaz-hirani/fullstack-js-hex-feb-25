@@ -1,0 +1,96 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.4">
+  <diagram name="Page-1" id="ghwC-3nxy7shHa-Ds6c1">
+    <mxGraphModel dx="1740" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-1" value="SERVER" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="150" width="110" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-2" value="APP" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="515" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-3" value="Express" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-4" value="i/p: localhost:3000" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="455" y="70" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-5" value="i/p: 59.87.23.234" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="455" y="100" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-6" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="110" as="sourcePoint" />
+            <mxPoint x="650" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-7" value="api.techcorp.com" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-8" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="340" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-9" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="ypp_mQsESHIYoZZL8vZ4-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="260" as="sourcePoint" />
+            <mxPoint x="650" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-10" value="fetch all employee records" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-11" value="ADD an employee record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-12" value="API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="750" y="145" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-13" value="API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="750" y="195" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-14" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=-0.044;entryY=0.448;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ypp_mQsESHIYoZZL8vZ4-15" target="ypp_mQsESHIYoZZL8vZ4-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="210" as="sourcePoint" />
+            <mxPoint x="180" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-15" value="Front Apps" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="165" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-16" value="React / Angular / JS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="130" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;-- How to call API using JavaScript&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="310" width="470" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-18" value="Platform : FREE APIs" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="370" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-19" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;- fetch method&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="350" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-20" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;- Promise&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="380" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-21" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;- Async Await&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="410" width="120" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="{&#xa;    id: 1,&#xa;    name: &#39;Leanne Graham&#39;,&#xa;    username: &#39;Bret&#39;,&#xa;    email: &#39;Sincere@april.biz&#39;,&#xa;    address: {&#xa;      street: &#39;Kulas Light&#39;,&#xa;      suite: &#39;Apt. 556&#39;,&#xa;      city: &#39;Gwenborough&#39;,&#xa;      zipcode: &#39;92998-3874&#39;,&#xa;      geo: [Object]&#xa;    },&#xa;    phone: &#39;1-770-736-8031 x56442&#39;,&#xa;    website: &#39;hildegard.org&#39;,&#xa;    company: {&#xa;      name: &#39;Romaguera-Crona&#39;,&#xa;      catchPhrase: &#39;Multi-layered client-server neural-net&#39;,&#xa;      bs: &#39;harness real-time e-markets&#39;&#xa;    }&#xa;  }" link="{&#xa;    id: 1,&#xa;    name: &#39;Leanne Graham&#39;,&#xa;    username: &#39;Bret&#39;,&#xa;    email: &#39;Sincere@april.biz&#39;,&#xa;    address: {&#xa;      street: &#39;Kulas Light&#39;,&#xa;      suite: &#39;Apt. 556&#39;,&#xa;      city: &#39;Gwenborough&#39;,&#xa;      zipcode: &#39;92998-3874&#39;,&#xa;      geo: [Object]&#xa;    },&#xa;    phone: &#39;1-770-736-8031 x56442&#39;,&#xa;    website: &#39;hildegard.org&#39;,&#xa;    company: {&#xa;      name: &#39;Romaguera-Crona&#39;,&#xa;      catchPhrase: &#39;Multi-layered client-server neural-net&#39;,&#xa;      bs: &#39;harness real-time e-markets&#39;&#xa;    }&#xa;  }" id="ypp_mQsESHIYoZZL8vZ4-22">
+          <mxCell style="text;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="130" y="710" width="350" height="340" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-23" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="860" as="sourcePoint" />
+            <mxPoint x="500" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypp_mQsESHIYoZZL8vZ4-24" value="id&lt;div&gt;name&lt;/div&gt;&lt;div&gt;email&lt;/div&gt;&lt;div&gt;city&lt;/div&gt;&lt;div&gt;company_name&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="820" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
