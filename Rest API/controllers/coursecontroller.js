@@ -1,3 +1,4 @@
+const Course = require("../models/course");
 
 /*
 AIM: is to insert course in DB
@@ -8,11 +9,11 @@ BODY:{
         "fee": 7500
 } 
 */
-exports.addCourse = (req,res)=>{   //req is to rad the values , res is to give the output json
+exports.addCourse = async (req,res)=>{   //req is to rad the values , res is to give the output json
     try{
-        const courseData = req.body; 
-        //console.log('inside addCourse controller method....')
-        console.log(courseData)
+        let courseData = req.body; 
+        const courseObj = new Course(courseData); //obj created 
+        courseData = await courseObj.save();
         res.status(200).json(courseData); 
     }
     catch(err){
