@@ -17,12 +17,18 @@ exports.addCourse = async (req,res)=>{   //req is to rad the values , res is to 
         res.status(200).json(courseData); 
     }
     catch(err){
-        console.log(err)
+        res.status(400).json({'msg' : `error in api: ${err.message}`}); 
     }
 }
 
-exports.getAllCourses = (req,res)=>{
-
+exports.getAllCourses = async (req,res)=>{
+   try{
+        const courses = await Course.find();
+        res.status(200).json(courses);
+   }
+   catch(err){
+        res.status(400).json({'msg' : `error in api: ${err.message}`}); 
+}    
 }
 
 exports.deleteCourse = (req,res)=>{
