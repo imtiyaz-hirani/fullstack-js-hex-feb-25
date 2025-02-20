@@ -77,6 +77,20 @@ exports.getCourseById = async(req,res)=>{
     }
 }
 
-exports.updateCourse = (req,res)=>{
-
+exports.updateCourse = async (req,res)=>{
+    try{
+        let id = req.params.id; 
+        let newCourseObj = req.body; 
+        let updatedCourse =  await Course.findByIdAndUpdate(id,newCourseObj); //{new: true}
+        if(!updatedCourse){
+            res.status(400).json({'msg' : `Invalid ID: ${id}`});
+        }
+        else{
+            res.status(200).json({'msg': 'course record updated!!'});
+        }
+    }
+    catch(err){ 
+        res.status(400).json({'msg' : `error in api: ${err.message}`}); 
+    }
 }
+ 
