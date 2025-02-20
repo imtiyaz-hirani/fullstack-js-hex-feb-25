@@ -35,8 +35,15 @@ exports.deleteCourse = (req,res)=>{
 
 }
 
-exports.getCourseById = (req,res)=>{
-
+exports.getCourseById = async(req,res)=>{
+    try{
+        let id = req.params.id; 
+        let courseObj = await Course.findOne({'_id': id})
+        res.status(200).json(courseObj);
+    }
+    catch(err){
+        res.status(400).json({'msg' : `error in api: ${err.message}`}); 
+    }
 }
 
 exports.updateCourse = (req,res)=>{
