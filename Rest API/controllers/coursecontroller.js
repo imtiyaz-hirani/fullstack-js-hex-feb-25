@@ -31,8 +31,39 @@ exports.getAllCourses = async (req,res)=>{
 }    
 }
 
-exports.deleteCourse = (req,res)=>{
+exports.deleteCourse = async (req,res)=>{
+   try{
+        //take the id of the record u wish to delete
+        let id = req.params.id; 
+        //ensure that record exists before u delete... 
+        const course = await Course.findOne({'_id':id}); 
+        if(!course){ //if course not initialized - undefined
+            res.status(400).json({'msg' : `Invalid ID: ${id}`}); 
+        }
+        else{
+            await Course.deleteOne({'_id': id}); 
+            res.status(200).json({'msg': 'course record deleted!!'});
+        }
+    }
+    catch(err){
+        res.status(400).json({'msg' : `error in api: ${err.message}`});
+    }
+}
 
+exports.deleteCoursev2 =async (req,res)=>{
+    try{
+        //take the id of the record u wish to delete
+        let id = req.params.id; 
+        const resp = await Course.findOneAndDelete({'_id':id}); 
+        console.log(resp)
+        if(resp == null)
+            res.status(400).json({'msg' : `Invalid ID: ${id}`});
+        else
+            res.status(200).json({'msg': 'course record deleted!!'});
+    }
+    catch(err){
+        res.status(400).json({'msg' : `error in api: ${err.message}`});
+    }    
 }
 
 exports.getCourseById = async(req,res)=>{
@@ -41,7 +72,7 @@ exports.getCourseById = async(req,res)=>{
         let courseObj = await Course.findOne({'_id': id})
         res.status(200).json(courseObj);
     }
-    catch(err){
+    catch(err){ 
         res.status(400).json({'msg' : `error in api: ${err.message}`}); 
     }
 }
