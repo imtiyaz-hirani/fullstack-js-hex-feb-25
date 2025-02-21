@@ -1,3 +1,4 @@
+const e = require("express");
 const Course = require("../models/course");
 const Enrollment = require("../models/enrollment");
 const Student = require("../models/student");
@@ -43,6 +44,30 @@ exports.fetchAllEnrollments= async (req,res)=>{
         res.status(200).json(enrollments);
     }
     catch(err){
-        res.status(400).json({ 'msg': `ERROR in api: ${err}` })
+        res.status(400).json({ 'msg': `ERROR in api: ${err.message}` })
     }
+}
+
+/* fetch all students enroled in course with given id. 
+PATH: /api/enroll/students
+param: courseId
+response: student[]
+*/
+exports.getStudentsByCourseId = async (req,res)=>{
+    try{
+        let courseId = req.params.courseId; 
+        //validate courseId
+        const course = await Course.findById(courseId); 
+        if(!course)
+            return res.status(400).json({'msg' : 'Invalid id ' + courseId})
+
+        const enrolls = await Enrollment.find({'course' : courseId}).populate("student","_id name email")
+        let students = enrolls.map(e=>e.student)
+        return res.status(200).json(students)
+    }
+    catch(err){
+        res.status(400).json({ 'msg': `ERROR in api: ${err.message}` })
+    }
+    
+
 }
