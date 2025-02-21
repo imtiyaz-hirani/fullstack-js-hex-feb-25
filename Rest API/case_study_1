@@ -1,0 +1,28 @@
+Create a Node application for creating REST apis for Product model having 
+following structure
+Product{title: String, price: Number, category: String, shortDesc: String}
+
+Create a Schema for creating above structured collection in mongodb. 
+
+create following apis and test them in postman
+
+1. save product in DB
+2. find all products
+3. find product by title. 
+4. find all products by category 
+5. delete product by id
+6. update product title and price 
+
+Student                                                 Course
+                        Enrollment
+                student, course , date_of_enroll
+ 
+                sid: courses[]
+                cid: student[]
+                all enrollement
+                studnt[] : fromDate - toDate
+
+Security: login, signup 
+
+JobPortal : tuesday/wednesday ---- upload , login, signup 
+

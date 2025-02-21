@@ -15,7 +15,7 @@ exports.addCourse = async (req,res)=>{   //req is to rad the values , res is to 
         const courseObj = new Course(courseData); //obj created 
         courseData = await courseObj.save();
         res.status(200).json(courseData); 
-    }
+    } 
     catch(err){
         res.status(400).json({'msg' : `error in api: ${err.message}`}); 
     }
