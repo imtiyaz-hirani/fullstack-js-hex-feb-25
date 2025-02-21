@@ -68,6 +68,54 @@ exports.getStudentsByCourseId = async (req,res)=>{
     catch(err){
         res.status(400).json({ 'msg': `ERROR in api: ${err.message}` })
     }
-    
-
 }
+
+/* fetch all courses based on given student id. 
+PATH: /api/enroll/courses
+param: studentId
+response: course[]
+*/
+exports.getCoursesByStudentId=(req,res)=>{
+    //to be done by u... 
+}
+
+
+/** to un-enroll studet from a course
+ * PATH: /api/enroll/unenroll
+ * PARAMS: courseId, studentId
+ * res: "Student unenrolled from the course" 
+ */
+
+exports.unenrollStudentFromCourse = async (req, res) => {
+    try {
+        let studentId = req.params.studentId;
+        let courseId = req.params.courseId;
+
+        //step 1: validate sid and cid 
+        let student = await Student.findById(studentId);
+
+        if (!student) { //if student is not found/defined 
+            return res.status(400).json({ 'msg': 'student id invalid!!' });
+        }
+
+        let course = await Course.findById(courseId);
+
+        if (!course) {
+            return res.status(400).json({ 'msg': 'course id invalid!!' });
+        }
+
+        //step 2: check if this student is enrolled in the course
+        const enrollment = await Enrollment.findOne({ 'student': studentId, 'course': courseId });
+
+        if (!enrollment) {
+            return res.status(400).json({ 'msg': 'student is not enrolled in course!!' });
+        }
+
+        await Enrollment.deleteOne({ 'student': studentId, 'course': courseId });
+        return res.status(200).json({ 'msg': 'Student un-enrolled from course' })
+    }
+    catch (err) {
+        res.status(400).json({ 'msg': `ERROR in api: ${err.message}` })
+    }
+
+};
