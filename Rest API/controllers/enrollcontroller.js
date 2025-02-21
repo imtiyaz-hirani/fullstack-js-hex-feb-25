@@ -138,6 +138,7 @@ exports.getEnrollmentbyDateRange=async (req,res)=>{
     }
     
     const enrolls = await Enrollment.find({'date_of_enroll': {$gt:fDate , $lt:tDate} })
+    .populate("student").populate("course")
     
     res.status(200).json(enrolls)
 }
