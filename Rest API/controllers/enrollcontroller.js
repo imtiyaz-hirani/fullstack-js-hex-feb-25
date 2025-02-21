@@ -119,3 +119,27 @@ exports.unenrollStudentFromCourse = async (req, res) => {
     }
 
 };
+
+exports.getEnrollmentbyDateRange=async (req,res)=>{
+    const {fromDate,toDate} = req.query; 
+    //console.log(fromDate) -- "2025-02-21"
+    //console.log(toDate) -- '2025-02-23'
+
+    const fDate = new Date(fromDate);
+    const tDate = new Date(toDate)
+    console.log(fDate)  
+    console.log(tDate) 
+
+    if(isNaN(fDate)){
+        return res.status(400).json({'msg': 'From date invalid, correct format: YYYY-MM-DD'})
+    }
+    if(isNaN(tDate)){
+        return res.status(400).json({'msg': 'To date invalid, correct format: YYYY-MM-DD'})
+    }
+    
+    const enrolls = await Enrollment.find({'date_of_enroll': {$gt:fDate , $lt:tDate} })
+    
+    res.status(200).json(enrolls)
+}
+
+// = (eq) !=(neq) <(lt)  >(gt)  <=(lte)  >=(gte)    tdate>date_of_enroll>fdate 
