@@ -1,0 +1,44 @@
+TITlE: Job Portal App
+
+Create a Job Portal to allow Users to apply for jobs. 
+Admin User will post the jobs of different categories and tech stacks. 
+The flow of the ap is as follows: 
+
+User 
+---> User signup 
+---> User login 
+---> User Dashboard 
+---> User Applies for job 
+---> user job page(to see applied jobs) 
+---> User profile (to upload pic and CV) 
+
+Admin /HR
+---> Login
+---> Admin Dashboard
+---> Admin job Post page [add job in DB]
+---> Admin all users listing page [see all users who have signed up]
+---> Admin Filters 
+	- fetch users by jobId 
+	- fetch users by city 
+---> Admin User Profile [Check user complete profile with pic and CV]
+
+
+API: Tech Spec
+1. create controllers, routes and index page for your project.
+
+2. Create models 
+Job(title, shortDescription, salary, experienceNeeded, techSkack)
+User(name,city, username,password,role, cv, profilePic)
+Application(job, user, appliedDate)
+Admin(username,password,role)
+
+3. Create API for Admin 
+	- POST job
+	- GetAll jobs
+   Create API for Application
+	- POST user 
+	- apply job (userId,jobId)   -- similar to assign and enroll 
+	
+   Create API for User
+	- SignUp** 
+	- Login** 

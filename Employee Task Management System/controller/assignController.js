@@ -17,7 +17,6 @@ exports.assignTaskToEmployee = async (req,res)=>{
     let assign = new Assign({'employee' : eid , 'task': tid})
     assign = (await assign.save())
                 
-
     return res.json(assign);
  }
 
