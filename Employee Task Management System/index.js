@@ -4,6 +4,7 @@ const app = express();
 const employeeRoute = require('./route/employeeRoute');
 const projectRoute = require('./route/projectRoute');
 const taskRoute = require('./route/taskRoute');
+const assignRoute = require('./route/assignRoute');
 
 const { json } = require('body-parser');
 
@@ -16,5 +17,6 @@ dbConnect();
 app.use('/api/employee', employeeRoute)
 app.use('/api/project', projectRoute)
 app.use('/api/task', taskRoute)
+app.use('/api/assign', assignRoute)
 
 app.listen($PORT, ()=> console.log(`Server listening on port ${$PORT}`))
