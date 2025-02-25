@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs')
 exports.addEmployee= async (req,res)=>{
     try{
         let {name,jobTitle,city,salary,profilePic,cv,username,password} = req.body; 
-
     //encrype/encode the password
     let salt = 10; //needed for hash algo: SHA256 
     const hashedPassword = await bcrypt.hash(password,salt); 
