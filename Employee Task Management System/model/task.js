@@ -5,7 +5,7 @@ const taskSchema =  new mongoose.Schema({
     shortDescription: {type: String,required: true },
     startDate: {type: Date , default: Date.now  },
     estimatedEndDate: {type: Date , default: Date.now },
-    project:{ type: mongoose.Schema.Types.ObjectId, ref: "Product", required: true},
+    project:{ type: mongoose.Schema.Types.ObjectId, ref: "Project", required: true},
 }); 
 
 const Task= mongoose.model("Task", taskSchema); 

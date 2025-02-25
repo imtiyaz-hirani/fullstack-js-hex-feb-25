@@ -7,6 +7,9 @@ const employeeSchema =  new mongoose.Schema({
     salary: {type: Number,required: true },
     profilePic: {type: String  },
     cv: {type: String  },
+    username: {type: String,required: true }, 
+    password: {type: String,required: true }, 
+    role: {type: String,default: 'ROLE_EMPLOYEE' }, 
 }); 
 
 const Employee= mongoose.model("Employee", employeeSchema); 
