@@ -35,7 +35,10 @@ exports.getAllProject = async (req,res)=>{
      */
     let skip = (page-1) * size; 
 
-    const projects = await Project.find().skip(skip).limit(size);
+    const projects = await Project.find().skip(skip).limit(size)
+    //filtering after find than skip and limit
+    //projects.skip(skip).limit(size); 
+    /* sorting can be done here*/  
     let totalRecords = await Project.countDocuments();
     let totalPages = Math.ceil(totalRecords / size); 
 

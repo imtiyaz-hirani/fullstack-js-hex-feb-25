@@ -1,4 +1,4 @@
-TITlE: Job Portal App
+TITLE: Job Portal App
 
 Create a Job Portal to allow Users to apply for jobs. 
 Admin User will post the jobs of different categories and tech stacks. 
@@ -39,6 +39,22 @@ Admin(username,password,role)
 	- POST user 
 	- apply job (userId,jobId)   -- similar to assign and enroll 
 	
-   Create API for User
+   Create API for Employee
 	- SignUp** 
 	- Login** 
+	
+implement following APIs for ADMIN
+-- all users listing page [see all users who have signed up] -- use pagination-3 users at a time 
+-- fetch users by city 
+-- fetch users who have applied to jobs(take jobId) getUserByJobId() 
+-- fetch jobs applied by User(take userId) : getJobsByUserId() 
+
+4. Some keys ops 
+	- pagination****
+	- sorting
+	- filter 
+	- map 
+
+1000 records   /   20 records per page(size)  = 50 pages
+500 records / 15 records per page = 33.33 ceil=34 floor =33 
+
