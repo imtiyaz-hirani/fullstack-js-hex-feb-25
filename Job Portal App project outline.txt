@@ -39,7 +39,7 @@ Admin(username,password,role)
 	- POST user 
 	- apply job (userId,jobId)   -- similar to assign and enroll 
 	
-   Create API for Employee
+   Create API for User
 	- SignUp** 
 	- Login** 
 	
