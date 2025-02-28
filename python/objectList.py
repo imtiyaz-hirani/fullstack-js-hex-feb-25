@@ -47,3 +47,10 @@ def displayTodos():
 
 #display todos posted by userId: 1  hint: use == 
 displayTodos()
+
+#javascript: JSON(Javascript Object Notation)  todo.id
+#python: JSON(Javascript Object Notation)  todo['id']
+
+## (t)=>{} -- JS - arrow function
+## t->{} -- Java - lambda exp 
+## lambda t: True
