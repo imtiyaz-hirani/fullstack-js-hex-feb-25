@@ -6,6 +6,7 @@ const projectRoute = require('./route/projectRoute');
 const taskRoute = require('./route/taskRoute');
 const assignRoute = require('./route/assignRoute');
 const adminRoute = require('./route/adminRoute');
+const authRoute = require('./route/authRoute');
 
 const { json } = require('body-parser');
 
@@ -20,5 +21,5 @@ app.use('/api/project', projectRoute)
 app.use('/api/task', taskRoute)
 app.use('/api/assign', assignRoute)
 app.use('/api/admin', adminRoute)
-
+app.use('/api/auth', authRoute)
 app.listen($PORT, ()=> console.log(`Server listening on port ${$PORT}`))

@@ -35,7 +35,8 @@ exports.login = async (req,res)=>{
     let {username,password} = req.body; 
 
     let employee = await Employee.findOne({'username': username})
-    if(employee === undefined) 
+     
+    if(employee === undefined || employee == null) 
         return res.status(400).json({'msg': 'Invalid Credentials!!'})
 
     let isValid = await bcrypt.compare(password, employee.password); 
