@@ -1,5 +1,8 @@
 import requests
 import json 
+import os 
+
+FILE_NAME="token.json"
 
 def getEmployeeToken():
     apiUrl="http://localhost:5001/api/employee/login"
@@ -16,18 +19,24 @@ def getEmployeeToken():
     if response.status_code == 200:
         info = response.json()
         token = info['token']
-        return token 
-    else:
-        return ''
+        #save this token in a file 
+        with open(FILE_NAME,"w") as file:
+            json.dump(token,file,indent=4)
+         
+    
 
  
-def getUserDetails(token):
+def getUserDetails():
     apiUrl="http://localhost:5001/api/auth/user"
-    header= {
-        "Authorization": f"Bearer {token}"
-    }
     
-    response = requests.get(apiUrl,headers=header)
+    #read the token from the file 
+    if os.path.exists(FILE_NAME):
+        with open(FILE_NAME, "r") as file:
+            token = json.load(file)
+            header= {
+             "Authorization": f"Bearer {token}"
+            }
+            response = requests.get(apiUrl,headers=header)
     if response.status_code == 200:
         user = response.json() 
         return user
@@ -41,15 +50,11 @@ while True:
     op = input("Enter the option")
     
     if op == "1":
-        token = getEmployeeToken()
-        if token == '':
-            print('Invalid Credentials')
-            break
-        
-        user = getUserDetails(token)
+        getEmployeeToken()
+        user = getUserDetails()
         
         if(user == ''):
-            print('Invalid Token!!')
+            print('Invalid Credentials!!')
         else:
             print(f"Welcome {user["name"]}  ROLE: {user["role"]}")
                 
