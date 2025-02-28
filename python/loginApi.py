@@ -32,7 +32,6 @@ def getUserDetails(token):
         user = response.json() 
         return user
     else:
-        print("Invalid Credentials..")
         return ''
     
 while True:
@@ -48,10 +47,12 @@ while True:
             break
         
         user = getUserDetails(token)
+        
         if(user == ''):
-            print('Invalid Credentials')
-            break
-        print(f"Welcome {user["name"]}  ROLE: {user["role"]}")
+            print('Invalid Token!!')
+        else:
+            print(f"Welcome {user["name"]}  ROLE: {user["role"]}")
+                
         break 
     
     if op == "2":
