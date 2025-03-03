@@ -1,4 +1,5 @@
-import './App.css'
+//import './App.css'
+import AddEmployee from './components/addEmployee';
 import ArrayOfObjects from './components/arrayOfObjects';
 import Post from './components/posts';
 import StatesComp from './components/statesComp';
@@ -11,7 +12,8 @@ function App() {
       {/* <Variables /> */}
       {/* <ArrayOfObjects /> */}
       {/* <StatesComp /> */}
-      <Post />
+      {/* <Post /> */}
+      <AddEmployee />
     </div>
   )
 }
