@@ -1,5 +1,6 @@
 import './App.css'
 import ArrayOfObjects from './components/arrayOfObjects';
+import Post from './components/posts';
 import StatesComp from './components/statesComp';
 import Variables from './components/variables'
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       {/* <Variables /> */}
       {/* <ArrayOfObjects /> */}
-      <StatesComp />
+      {/* <StatesComp /> */}
+      <Post />
     </div>
   )
 }
