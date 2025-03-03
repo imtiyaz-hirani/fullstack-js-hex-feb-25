@@ -7,7 +7,7 @@ import Variables from './components/variables'
 function App() {
   
   return (
-    <div>
+    <div className='container-fluid'>
       {/* <Variables /> */}
       {/* <ArrayOfObjects /> */}
       {/* <StatesComp /> */}
