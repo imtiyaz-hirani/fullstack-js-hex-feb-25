@@ -13,12 +13,11 @@ function UserList(){
     return(
         <>
             <div className="row">
-                   <div className="col-lg-12">
-                   <h1 class="display-6">User List
-                    <hr />
-                   </h1>
-
-                    </div> 
+                <div className="col-lg-12">
+                    <h1 class="display-6">User List
+                        <hr />
+                    </h1>
+                </div> 
             </div>
             <div className="row">
                 {

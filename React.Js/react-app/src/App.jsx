@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import Post from './components/posts';
 import StatesComp from './components/statesComp';
 import Effects from './components/useEffect_demo';
+import AddUser from './components/user_add';
 import UserList from './components/user_list';
 import Variables from './components/variables'
 
@@ -13,13 +14,14 @@ function App() {
   return (
     <div className='container-fluid'>
       <div className='row mb-4'>
-        <div col-lg-12>
+        <div className='col-lg-12'>
           <Navbar />
         </div>
       </div>
       <div className='row'>
-        <div col-lg-12>
-          <UserList />
+        <div className='col-lg-12'>
+          {/* <UserList /> */}
+          <AddUser />
         </div>
       </div>
       
