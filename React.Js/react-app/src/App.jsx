@@ -1,6 +1,7 @@
 import './App.css'
 import AddEmployee from './components/addEmployee';
 import ArrayOfObjects from './components/arrayOfObjects';
+import EmployeeList from './components/employee_list';
 import Navbar from './components/navbar';
 import Post from './components/posts';
 import StatesComp from './components/statesComp';
@@ -21,7 +22,8 @@ function App() {
       <div className='row'>
         <div className='col-lg-12'>
           {/* <UserList /> */}
-          <AddUser />
+          {/* <AddUser /> */}
+          <EmployeeList />
         </div>
       </div>
       
