@@ -13,9 +13,9 @@ function ArrayOfObjects(){
                     City: {u.address.city} <br />
                     <hr />
                 </div>
-            ))
-            
+            )) 
             }
+             
         </>
     )
 }

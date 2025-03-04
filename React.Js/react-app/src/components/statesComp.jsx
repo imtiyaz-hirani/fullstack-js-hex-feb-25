@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 function StatesComp(){
-    let count = 0 
-    const [cnt, setCnt] = useState(0); 
+    let count = 0  //normal var
+    const [cnt, setCnt] = useState(0); //state var  
 
     const countOp =(op)=>{
         if(op === 'INCR'){

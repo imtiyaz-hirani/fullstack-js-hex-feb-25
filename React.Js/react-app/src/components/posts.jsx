@@ -3,10 +3,16 @@ import postData from "../data/postData";
 
 function Post(){
     const [posts,setPosts] = useState(postData.splice(0,10))
+    //100X: {},{},{},{},{}.....{} -- 100
+    //posts = 100X 
 
+    //101X: {},{},{},{}.....{} --99
+    //posts=101X
+
+    //102X: {},{},{},{}.....{} --98
+    //posts=102X
     const remove = (id)=>{
-        const updatedPost = [...posts.filter((p)=>p.id !== id)]
-        setPosts(updatedPost)
+        setPosts([...posts.filter((p)=>p.id !== id)])
     }
     return(
         <div>

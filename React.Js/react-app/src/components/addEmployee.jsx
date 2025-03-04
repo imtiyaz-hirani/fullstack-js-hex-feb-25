@@ -8,7 +8,6 @@ function AddEmployee(){
     let [emailErr, setEmailErr] = useState(null);
     let [dobErr, setDobErr] = useState(null);
    
-
     return(
         <form>
         <div className="container">
@@ -21,16 +20,16 @@ function AddEmployee(){
                         <label>Name:  </label> 
                         <span style={{'fontSize': 'small' , 'color' : 'red'}}>{nameErr}</span>
                         <input className="form-control" type="text" 
-                            onChange={$event=>{
-                                setName($event.target.value)
-                               
-                                if($event.target.value === '' )
-                                    setNameErr('Name is required')
-                                else
-                                    setNameErr('')
+                           onChange={$event=>{
+                            setName($event.target.value)
+                           
+                            if($event.target.value === '' )
+                                setNameErr('Name is required')
+                            else
+                                setNameErr('')
 
-                                
-                            }}/>
+                            
+                        }} />
                     </div>
                     <div className="mt-4" >
                         <label>Email: </label>
@@ -60,7 +59,7 @@ function AddEmployee(){
                     </div>
                 </div>
                 <div className="card-footer">
-                    <input type="submit" value="Add Employee" disabled={(name !== undefined || name !== "")?email !== undefined?dob !==undefined?false:true : true : true } /> 
+                    <input type="submit" value="Add Employee" disabled={!name || !email || !dob} /> 
                 </div>
             </div>
 

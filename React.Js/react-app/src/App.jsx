@@ -1,19 +1,36 @@
-//import './App.css'
+import './App.css'
 import AddEmployee from './components/addEmployee';
 import ArrayOfObjects from './components/arrayOfObjects';
+import Navbar from './components/navbar';
 import Post from './components/posts';
 import StatesComp from './components/statesComp';
+import Effects from './components/useEffect_demo';
+import UserList from './components/user_list';
 import Variables from './components/variables'
 
 function App() {
   
   return (
     <div className='container-fluid'>
+      <div className='row mb-4'>
+        <div col-lg-12>
+          <Navbar />
+        </div>
+      </div>
+      <div className='row'>
+        <div col-lg-12>
+          <UserList />
+        </div>
+      </div>
+      
+       
       {/* <Variables /> */}
       {/* <ArrayOfObjects /> */}
       {/* <StatesComp /> */}
       {/* <Post /> */}
-      <AddEmployee />
+      {/* <AddEmployee /> */}
+      {/* <Effects /> */}
+      
     </div>
   )
 }
