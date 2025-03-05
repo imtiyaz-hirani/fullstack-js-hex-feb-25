@@ -10,6 +10,7 @@ import Effects from './components/useEffect_demo';
 import AddUser from './components/user_add';
 import UserList from './components/user_list';
 import Variables from './components/variables'
+import UpdateEmployee from './components/updateEmployee';
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<AddUser />} />
             <Route path="/employee" element={<EmployeeList />} />
             <Route path="/users" element={<UserList />} />
+            <Route path="/employee-update" element={<UpdateEmployee />} />
           </Routes>
            
         </div>
