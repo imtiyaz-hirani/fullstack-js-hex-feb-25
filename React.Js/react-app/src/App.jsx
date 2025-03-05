@@ -1,3 +1,4 @@
+import { Outlet, Route, Routes } from 'react-router';
 import './App.css'
 import AddEmployee from './components/addEmployee';
 import ArrayOfObjects from './components/arrayOfObjects';
@@ -12,6 +13,7 @@ import Variables from './components/variables'
 
 function App() {
   
+
   return (
     <div className='container-fluid'>
       <div className='row mb-4'>
@@ -21,9 +23,12 @@ function App() {
       </div>
       <div className='row'>
         <div className='col-lg-12'>
-          {/* <UserList /> */}
-          {/* <AddUser /> */}
-          <EmployeeList />
+          <Routes>
+            <Route path="/" element={<AddUser />} />
+            <Route path="/employee" element={<EmployeeList />} />
+            <Route path="/users" element={<UserList />} />
+          </Routes>
+           
         </div>
       </div>
       
