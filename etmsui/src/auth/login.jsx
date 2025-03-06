@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function Login(){
     const [username,setUsername] = useState(undefined);
     const [password,setPassword] = useState(undefined);
     const [msg,setmsg] =useState(undefined);
+    const navigate = useNavigate();
 
     const processLogin = async ($event)=>{
         $event.preventDefault();  //this ensures that after form is submitted , it does not refresh the page
@@ -17,6 +19,18 @@ function Login(){
                 'password' : password
             })
             console.log(response)
+            let role = response.data.role 
+            localStorage.setItem("token",response.data.token )
+            switch(role){
+                case 'ROLE_ADMIN':
+                    navigate('/admin/dashboard')
+                    break; 
+                case 'ROLE_EMPLOYEE':
+                    navigate('/employee/dashboard')
+                    break; 
+                default: 
+                    break; 
+            }
             return
         }
         catch(error){
