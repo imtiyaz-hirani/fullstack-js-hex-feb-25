@@ -7,12 +7,13 @@ const taskRoute = require('./route/taskRoute');
 const assignRoute = require('./route/assignRoute');
 const adminRoute = require('./route/adminRoute');
 const authRoute = require('./route/authRoute');
-
+var cors = require('cors')
 const { json } = require('body-parser');
 
 const $PORT = process.env.$PORT || 5001; 
 
 app.use(express.json())
+app.use(cors())
 
 dbConnect();
 

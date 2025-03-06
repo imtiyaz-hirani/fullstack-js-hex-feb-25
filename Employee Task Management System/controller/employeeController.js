@@ -33,7 +33,7 @@ exports.getAllEmployee=async (req,res)=>{
 
 exports.login = async (req,res)=>{
     let {username,password} = req.body; 
-
+ 
     let employee = await Employee.findOne({'username': username})
      
     if(employee === undefined || employee == null) 
