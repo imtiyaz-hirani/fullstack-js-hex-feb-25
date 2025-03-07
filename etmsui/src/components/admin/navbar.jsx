@@ -20,7 +20,7 @@ function AdminNavbar() {
                                     <a class="nav-link" href="#">Employee Onboarding</a></NavLink>
                             </li>
                             <li class="nav-item">
-                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                <NavLink to='/admin/employees' style={{ 'textDecoration': 'none' }}>
                                     <a class="nav-link" href="#">All Employees</a></NavLink>
                             </li>
                             <li class="nav-item">
