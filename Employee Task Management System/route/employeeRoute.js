@@ -4,7 +4,7 @@ const auth = require('../middleware/auth');
  
 const router = express.Router();
 
-router.post("/add", addEmployee)
+router.post("/add",auth, addEmployee)
 router.get("/getall",auth,getAllEmployee)
 router.post("/login",login)
 

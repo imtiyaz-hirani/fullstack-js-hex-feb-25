@@ -5,6 +5,13 @@ const jwt = require('jsonwebtoken')
 
 exports.addEmployee= async (req,res)=>{
     try{
+        let obj = req.user; 
+        let userN = obj.username;
+
+        //check if this is admin's userN 
+        let admin = await Admin.findOne({'username': username});
+        if(!admin)
+            return res.status(401).json({ 'msg': 'UnAuthorized' })
         let {name,jobTitle,city,salary,profilePic,cv,username,password} = req.body; 
     //encrype/encode the password
     let salt = 10; //needed for hash algo: SHA256 

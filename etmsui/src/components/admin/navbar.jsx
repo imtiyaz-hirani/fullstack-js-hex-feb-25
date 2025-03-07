@@ -1,29 +1,41 @@
 import { NavLink } from "react-router";
 
-function AdminNavbar(){
-    return(
+function AdminNavbar() {
+    return (
         <div>
             <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="#">ETMS</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <li class="nav-item">
+                                <NavLink to='/admin/dashboard' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">Home</a></NavLink>
                             </li>
                             <li class="nav-item">
-                               <NavLink to='/admin/employee-onboarding'> <a class="nav-link" href="#" style={{'textDecoration' : 'none'}} >Employee Onboarding</a></NavLink> 
+                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">Employee Onboarding</a></NavLink>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">All Employees</a>
+                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">All Employees</a></NavLink>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Assign Task to Employee</a>
+                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">Add Project</a></NavLink>
                             </li>
-                             
+                            <li class="nav-item">
+                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">Add task</a></NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                    <a class="nav-link" href="#">Assign Task to Employee</a></NavLink>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
