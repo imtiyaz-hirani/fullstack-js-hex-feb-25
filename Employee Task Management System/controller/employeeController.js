@@ -3,25 +3,26 @@ const Employee = require("../model/employee");
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-exports.addEmployee= async (req,res)=>{
-    try{
-        let obj = req.user; 
+exports.addEmployee = async (req, res) => {
+    try {
+        let obj = req.user;
         let userN = obj.username;
-
+          
         //check if this is admin's userN 
-        let admin = await Admin.findOne({'username': username});
-        if(!admin)
+        let admin = await Admin.findOne({ 'username': userN });
+        if (!admin)
             return res.status(401).json({ 'msg': 'UnAuthorized' })
-        let {name,jobTitle,city,salary,profilePic,cv,username,password} = req.body; 
-    //encrype/encode the password
-    let salt = 10; //needed for hash algo: SHA256 
-    const hashedPassword = await bcrypt.hash(password,salt); 
-    let employee = new Employee({name,jobTitle,city,salary,profilePic,cv,username,'password': hashedPassword})
 
-    employee = await employee.save();
-    return res.status(200).json(employee); 
+        let { name, jobTitle, city, salary, profilePic, cv, username, password } = req.body;
+        //encrype/encode the password
+        let salt = 10; //needed for hash algo: SHA256 
+        const hashedPassword = await bcrypt.hash(password, salt);
+        let employee = new Employee({ name, jobTitle, city, salary, profilePic, cv, username, 'password': hashedPassword })
+
+        employee = await employee.save();
+        return res.status(200).json(employee);
     }
-    catch(err){
+    catch (err) {
         return res.status(400).json(err)
     }
 }
