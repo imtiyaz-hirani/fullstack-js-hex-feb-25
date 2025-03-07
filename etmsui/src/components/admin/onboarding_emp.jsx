@@ -20,7 +20,7 @@ function EmployeeOnboarding(){
             'Authorization' : 'Bearer ' + token
         }
         try {
-            const response = await axios.post(url, {
+            const response =  await axios.post(url, {
                 'name': name,
                 'jobTitle': jobTitle,
                 'city': city,
