@@ -32,7 +32,7 @@ function AdminNavbar() {
                                     <a class="nav-link" href="#">Add task</a></NavLink>
                             </li>
                             <li class="nav-item">
-                                <NavLink to='/admin/employee-onboarding' style={{ 'textDecoration': 'none' }}>
+                                <NavLink to='/admin/assign-task' style={{ 'textDecoration': 'none' }}>
                                     <a class="nav-link" href="#">Assign Task to Employee</a></NavLink>
                             </li>
 

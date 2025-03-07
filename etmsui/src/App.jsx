@@ -5,6 +5,7 @@ import EmployeeDashboard from "./components/employee/dashboard"
 import EmployeeOnboarding from "./components/admin/onboarding_emp"
 import EmployeeList from "./components/admin/employee-list"
 import './App.css'
+import AssignTask from "./components/admin/assign_task"
 function App() {
  
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
          <Route path="/admin/employee-onboarding" element={<EmployeeOnboarding />}> </Route>  
          <Route path="/admin/employees" element={<EmployeeList />}> </Route>  
-
+         <Route path="/admin/assign-task" element={<AssignTask />}> </Route> 
        </Routes>
     </>
   )
