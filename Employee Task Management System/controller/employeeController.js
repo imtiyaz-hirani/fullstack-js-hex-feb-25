@@ -2,6 +2,7 @@ const Admin = require("../model/admin");
 const Employee = require("../model/employee");
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const multer  = require('multer')
 
 exports.addEmployee = async (req, res) => {
     try {
@@ -58,3 +59,37 @@ exports.login = async (req,res)=>{
     const token = jwt.sign(employeeObj, SECRET_KEY, { 'expiresIn': '1h' });
     res.json({ 'token': token })
 }
+
+exports.uploadCV =  async (req,res)=>{
+    try{
+        let obj = req.user; 
+    let username = obj.username; 
+
+    let employee = await Employee.findOne({'username': username})
+     
+    if(employee === undefined || employee == null) 
+        return res.status(400).json({'msg': 'Invalid Credentials!!'})
+
+    if(!req.file){
+        return res.status(400).json({'msg': 'No File detected!!'})
+    }
+
+    const multerFileName = req.file.filename; 
+    const mimeType = req.file.mimetype;
+    const originalFileName = req.file.originalname;
+    const fileExtension = mimeType.split('/').pop()
+
+    const allowedExtensions = ['docx', 'pdf']; 
+    if(!allowedExtensions.includes(fileExtension)){
+        return res.status(400).json({'msg': 'File Not allowed!! Allowed Types ' + allowedExtensions})
+    }
+    employee.cv = multerFileName + '.' + fileExtension
+
+    employee = await employee.save(employee);
+    res.json( employee);
+    }
+    catch(err){
+        return res.status(400).json(err)
+    }
+}
+ 
