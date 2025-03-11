@@ -1,5 +1,37 @@
+import axios from "axios";
+import { useState } from "react"
+
 function EmpProfile() {
 
+    const [file,setFile] = useState(undefined); 
+
+    const handeFileChange=(e)=>{
+        setFile(e.target.files[0]); //the file is not being represented by 'file' state variable
+    }
+
+    const uploadCV=async ()=>{
+        if(!file){
+            console.log('file not present ' + file)   
+        }
+        const fData = new FormData() 
+        fData.append('file', file)
+        const header = {
+            'Authorization' : 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type' : 'multipart/form-data'
+        }
+        try{
+            const resp = await axios.post('http://localhost:5001/api/employee/uploadcv',fData, {
+                headers : header
+            })
+            console.log(resp) //u mush set the message here using toaster
+        }
+        catch(err){
+            console.log(err)
+        }
+
+
+
+    }
     return (
         <div className="card">
             <div className="card-header">
@@ -37,12 +69,13 @@ function EmpProfile() {
                         <input type="text" class="form-control"
                              />
                     </div>
+                    </form>
                     <hr />
                     <div class="col-lg-12">
-                        <label for="inputCity" class="form-label">Profile Pic</label>
-                        <input type="file" class="form-control" id="inputCity" />
+                        <label >Profile Pic</label>
+                        <input type="file" class="form-control" onChange={handeFileChange}/>
                         <br />
-                        <button className="btn btn-secondary">Upload</button>
+                        <button className="btn btn-secondary" onClick={uploadCV}>Upload</button>
                     </div>
                     <hr />
                     <div class="col-lg-12">
@@ -55,7 +88,7 @@ function EmpProfile() {
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Save Profile</button>
                     </div>
-                </form>
+                 
             </div>
         </div>
     )
