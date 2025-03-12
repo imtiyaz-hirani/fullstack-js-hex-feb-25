@@ -28,9 +28,6 @@ function EmpProfile() {
         catch(err){
             console.log(err)
         }
-
-
-
     }
     return (
         <div className="card">

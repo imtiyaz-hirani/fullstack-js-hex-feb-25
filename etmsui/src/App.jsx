@@ -7,6 +7,7 @@ import EmployeeList from "./components/admin/employee-list"
 import './App.css'
 import AssignTask from "./components/admin/assign_task"
 import EmployeeTask from "./components/employee/employee_task"
+import Comment from "./components/employee/comment"
 function App() {
  
   return (
@@ -19,7 +20,8 @@ function App() {
          <Route path="/admin/employee-onboarding" element={<EmployeeOnboarding />}> </Route>  
          <Route path="/admin/employees" element={<EmployeeList />}> </Route>  
          <Route path="/admin/assign-task" element={<AssignTask />}> </Route>
-         <Route path="/employee/tasks" element={<EmployeeTask />}> </Route>   
+         <Route path="/employee/tasks" element={<EmployeeTask />}> </Route>  
+         <Route path="/employee/tasks/comments/:taskId" element={<Comment />}> </Route>   
          </Routes>
     </>
   )

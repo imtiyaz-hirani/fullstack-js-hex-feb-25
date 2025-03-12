@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router"
 import EmployeeNavbar from "./navbar"
 
 function EmployeeTask() {
+    const navigate = useNavigate(); 
+    let sampleId= '67bd66041538c4c5ca513fe9'
     return (
         <>
             <div className="row">
@@ -40,7 +43,9 @@ function EmployeeTask() {
                              <br />
                              create CRUD Apis for Account model and activate auth
                               <br /><br />
-                              <button className="btn btn-info" > View Full Details</button>  
+                              <button className="btn btn-info" onClick={()=>{
+                                navigate(`/employee/tasks/comments/${sampleId}`)
+                              }}> View Full Details</button>  
                         </div>
                         <div className="card-footer">
                             Estimated End Date: 2025-03-03 
