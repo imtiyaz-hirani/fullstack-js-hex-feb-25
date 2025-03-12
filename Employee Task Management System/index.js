@@ -7,6 +7,8 @@ const taskRoute = require('./route/taskRoute');
 const assignRoute = require('./route/assignRoute');
 const adminRoute = require('./route/adminRoute');
 const authRoute = require('./route/authRoute');
+const commentRoute = require('./route/commentRoute');
+
 var cors = require('cors')
 const { json } = require('body-parser');
 
@@ -23,4 +25,6 @@ app.use('/api/task', taskRoute)
 app.use('/api/assign', assignRoute)
 app.use('/api/admin', adminRoute)
 app.use('/api/auth', authRoute)
+app.use('/api/comment', commentRoute)
+
 app.listen($PORT, ()=> console.log(`Server listening on port ${$PORT}`))
